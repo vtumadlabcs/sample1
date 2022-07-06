@@ -1,24 +1,135 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-    <link rel="stylesheet" href="https://s.pageclip.co/v1/pageclip.css" media="screen">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+      rel="stylesheet"
+      href="https://s.pageclip.co/v1/pageclip.css"
+      media="screen"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
+    <style>
+      .pageclip-form {
+        position: relative;
+      }
+      .pageclip-form__success {
+        position: absolute;
+        top: -1px;
+        left: -1px;
+        right: -1px;
+        bottom: -1px;
+        text-align: center;
+        background: hsla(0, 0%, 100%, 0.8);
+        z-index: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+      .pageclip-form__success__message {
+        font-size: 2rem;
+        text-align: center;
+        transform-origin: center;
+        animation: 0.3s linear none a;
+      }
+      .pageclip-form__submit {
+        position: relative;
+      }
+      .pageclip-form__submit:after {
+        display: inline-block;
+        position: relative;
+        text-indent: -9999em;
+        border: 3px solid hsla(0, 0%, 100%, 0.3);
+        border-left: 3px solid #fff;
+        transform: scale(0.01) translateZ(0);
+        border-radius: 50%;
+        width: 20px;
+        height: 20px;
+        content: "";
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        margin-left: -10px;
+        margin-top: -10px;
+        z-index: 2;
+      }
+      .pageclip-form__submit.pageclip-form__submit--dark-loader:after {
+        border-color: rgba(0, 0, 0, 0.3);
+        border-left-color: #000;
+      }
+      .pageclip-form__submit.pageclip-form__submit--start-loading:after {
+        animation: 0.1s linear none a;
+      }
+      .pageclip-form__submit.pageclip-form__submit--start-loading > span {
+        animation: 0.1s linear none c;
+      }
+      .pageclip-form__submit.pageclip-form__submit--loading:after {
+        transform: translateZ(0);
+        animation: 1.2s linear infinite d;
+      }
+      .pageclip-form__submit.pageclip-form__submit--loading > span {
+        opacity: 0;
+      }
+      .pageclip-form__submit.pageclip-form__submit--end-loading:after {
+        animation: 0.1s linear none b;
+      }
+      .pageclip-form__submit.pageclip-form__submit--end-loading > span {
+        animation: 0.1s linear reverse c;
+      }
+      @keyframes a {
+        0% {
+          transform: scale(0.01) translateZ(0);
+        }
+        50% {
+          transform: scale(1.2) translateZ(0);
+        }
+        to {
+          transform: scale(1) translateZ(0);
+        }
+      }
+      @keyframes b {
+        0% {
+          transform: scale(1) translateZ(0);
+        }
+        to {
+          transform: scale(0.01) translateZ(0);
+        }
+      }
+      @keyframes c {
+        0% {
+          opacity: 1;
+        }
+        to {
+          opacity: 0;
+        }
+      }
+      @keyframes d {
+        0% {
+          transform: rotate(0deg);
+        }
+        to {
+          transform: rotate(1turn);
+        }
+      }
+    </style>
+  </head>
+  <body>
     <script src="https://s.pageclip.co/v1/pageclip.js" charset="utf-8"></script>
-    <form action="https://send.pageclip.co/SxJZxcppYgjAj9aeR0Xy9cDaQq9IMqmX/Varshith" class="pageclip-form" method="post">
-        <!-- Replace these inputs with your own. Make sure they have a "name" attribute! -->
-        <input type="text" name="name" value="Roscoe Jones" />
-        <input type="email" name="email" value="roscoe@example.com" />
-      
-        <!-- This button will have a loading spinner. Keep the inner span for best results. -->
-        <button type="submit" class="pageclip-form__submit">
-          <span>Send</span>
-        </button>
-      </form>
-</body>
+    <form
+      action="https://send.pageclip.co/SxJZxcppYgjAj9aeR0Xy9cDaQq9IMqmX/Varshith"
+      class="pageclip-form"
+      method="post"
+    >
+      <!-- Replace these inputs with your own. Make sure they have a "name" attribute! -->
+      <input type="text" name="name" value="Roscoe Jones" />
+      <input type="email" name="email" value="roscoe@example.com" />
+
+      <!-- This button will have a loading spinner. Keep the inner span for best results. -->
+      <button type="submit" class="pageclip-form__submit">
+        <span>Send</span>
+      </button>
+    </form>
+  </body>
 </html>
